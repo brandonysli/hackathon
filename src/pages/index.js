@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css'
 
 import Post from './components/Post'
 import Tag from './components/Tag'
+import Nav from './components/Nav'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function Home() {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></link>
       </Head>
+      <Nav />
       <Post />
       <Tag tagname="Orthodontist"/>
     </>
