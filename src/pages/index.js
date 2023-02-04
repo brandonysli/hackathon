@@ -8,7 +8,6 @@ import Post from './components/Post';
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const x = fetch().
   return (
     <>
       <Head>
