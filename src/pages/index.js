@@ -4,6 +4,8 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 
 import Post from './components/Post';
+import Nav from './components/Nav';
+import Tag from './components/Tag';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +21,15 @@ export default function Home() {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></link>
       </Head>
-      <Post/>
+      <Nav/>
+      <div className="flex flex-col justify-center w-full">
+        <Post/>
+        <Tag tagname="Orthodontist"/>
+      </div>
     </>
   )
+
+  
 }
+
+
