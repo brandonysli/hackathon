@@ -10,7 +10,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model User {
-  id String  @id
+  id             String  @id @db.Uuid
+  name           String
+  email          String
+  specialization String
+  position       String
+  phone          String?
+  posts          Post[]
+}
+
+model Post {
+  id          String    @id @db.Uuid
+  createdAt   DateTime  @db.Timestamptz()
+  description String
+  title       String
+  rating      Int?
+  comments    Comment[]
+  User        User?     @relation(fields: [userId], references: [id])
+  userId      String?   @db.Uuid
+}
+
+model Comment {
+  id          String  @id @db.Uuid
+  description String
+  Post        Post?   @relation(fields: [postId], references: [id])
+  postId      String? @db.Uuid
 }
