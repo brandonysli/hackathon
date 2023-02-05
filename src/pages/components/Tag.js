@@ -1,5 +1,3 @@
-import { classnames } from "classnames";
-
 export default function Tag(tagProps) {
 
     const bgClass= {
@@ -41,7 +39,7 @@ export default function Tag(tagProps) {
     
     return (
         <>
-            <div className={`${bgClass[tagProps.color]} flex px-2 py-1 rounded-md w-min`}>
+            <div className={`${bgClass[tagProps.color]} flex px-2 py-1 rounded-md w-fit`}>
                 <span className={`${textClass[tagProps.color]} text-xs font-bold`}>{tagProps.tagname}</span>
             </div>
         </>

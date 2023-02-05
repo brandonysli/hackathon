@@ -45,18 +45,20 @@ export default function Post({postProps}) {
                         <div className="flex flex-col gap-2">
                             <div className="flex flex-row">
                                 <div className="flex px-2 py-1 bg-gray-100 rounded-md">
-                                    <p className="text-sm font-bold text-gray-600">Review by 2/6/2020</p>
+                                    <p className="text-sm font-bold text-gray-600">Review by 2/7/2022</p>
                                 </div>
                             </div>
+                            {val.reviewingUser ?
                             <div className="flex flex-col gap-2 ml-2">
                                 <p className="font-semibold">{`Dr. ${val.reviewingUser.name}`}</p>
                                 <Tag color={val.reviewingUser.specialization.color} tagname={val.reviewingUser.specialization.name}/>
-                            </div>
+                            </div> : <Tag color="gray" tagname="Not Assigned"/>
+                            }
 
                         </div>
 
                         <div className="flex flex-row items-end justify-between mt-2">
-                            <p className="text-base font-semibold text-gray-700"> Posted 10 min ago</p>
+                            <p className="text-base font-semibold text-gray-700"> {`Posted: ${val.createdAt}`}</p>
                         </div>
                     </div>
                     <div className="flex flex-col items-end justify-between w-1/2 py-1">
@@ -64,7 +66,7 @@ export default function Post({postProps}) {
                             <IconBookmark/>
                         </div>
                         <div className="px-2 py-1 bg-gray-100 rounded-lg">
-                            <p className="font-bold">$20 Flat Fee</p>
+                            <p className="font-bold">$30 Flat Fee</p>
                         </div>
                     </div>
                 </div>
