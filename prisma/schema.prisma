@@ -16,7 +16,6 @@ model User {
   email            String          @unique
   specializationId String?         @db.Uuid
   specialization   Specialization? @relation(fields: [specializationId], references: [id])
-  position         String
   phone            String?
   posts            Post[]
   bookmarkedPosts  BookmarkedPost[]
@@ -24,15 +23,16 @@ model User {
 
 model Post {
   id            String    @id @default(uuid()) @db.Uuid
-  createdAt     DateTime  @db.Timestamptz()
+  createdAt     DateTime?  @db.Timestamptz()
   description   String
   title         String
   rating        Int?
   comments      Comment[]
+  resolved      Boolean
   reviewingUser User?     @relation(fields: [userId], references: [id])
   userId        String?   @db.Uuid
-  illness       String
-  urgency       Int
+  area          String
+  urgency       Boolean
   pet           Pet?      @relation(fields: [petId], references: [id])
   petId         String?   @db.Uuid
   bookmarkPosts    BookmarkedPost[]
@@ -56,14 +56,13 @@ model Pet{
     id       String  @id @default(uuid()) @db.Uuid
     name     String
     posts    Post[]
-    emoji    String
 }
 
 model BookmarkedPost {
   id      String    @id @default(uuid()) @db.Uuid
   userId  String?   @db.Uuid
   user    User[]
-  postId  String
+  postId  String?   @db.Uuid
   posts   Post? @relation(fields: [postId], references: [id])
   
 }

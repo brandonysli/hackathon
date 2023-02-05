@@ -2,14 +2,81 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
+await prisma.user.deleteMany();
+await prisma.pet.deleteMany();
+await prisma.post.deleteMany();
+await prisma.specialization.deleteMany();
+
+
+const cardiologist = await prisma.specialization.create({
+    data: {
+        name: 'cardiologist',
+        color: 'red'
+    }
+})
+const neurologist = await prisma.specialization.create({
+    data: {
+        name: 'neurologist',
+        color: 'blue'
+    }
+})
+const oncologist = await prisma.specialization.create({
+    data: {
+        name: 'oncologist',
+        color: 'orange'
+    }
+})
+const nutritionist = await prisma.specialization.create({
+    data: {
+        name: 'nutritionist',
+        color: 'purple'
+    }
+})
+const virologist = await prisma.specialization.create({
+    data: {
+        name: 'virologist',
+        color: 'green'
+    }
+})
+const immunologist = await prisma.specialization.create({
+    data: {
+        name: 'immunologist',
+        color: 'cyan'
+    }
+})
+const parasitologist = await prisma.specialization.create({
+    data: {
+        name: 'parasitologist',
+        color: 'yellow'
+    }
+})
+const epidemiologist = await prisma.specialization.create({
+    data: {
+        name: 'epidemiologist',
+        color: 'lime'
+    }
+})
+const surgeon = await prisma.specialization.create({
+    data: {
+        name: 'surgeon',
+        color: 'amber'
+    }
+})
+const dentist = await prisma.specialization.create({
+    data: {
+        name: 'dentist',
+        color: 'fuchia'
+    }
+})
+
+
+
 const mikey = await prisma.user.create({
     data: {
         name: 'mikey',
         email: 'mikey@gmail.com',
-        specialization: 'mikey-oncology',
-        position: 'mikey-specialist',
-        phone: '123-456-7890'
-        specializationid: 
+        phone: '123-456-7890',
+        specializationId: dentist.id 
         
     }
     
@@ -19,10 +86,8 @@ const jason = await prisma.user.create({
     data: {
         name: 'jason',
         email: 'jason@gmail.com',
-        specialization: 'jason-oncology',
-        position: 'jason-specialist',
-        phone: '123-456-7890'
-        specializationid: 
+        phone: '123-456-7890',
+        specializationId: neurologist.id
     }
 });
 
@@ -30,10 +95,8 @@ const justin = await prisma.user.create({
     data: {
         name: 'justin',
         email: 'justin@gmail.com',
-        specialization: 'justin-oncology',
-        position: 'justin-specialist',
-        phone: '123-456-7890'
-        specializationid: 
+        phone: '123-456-7890',
+        specializationId: oncologist.id
     }
     
     
@@ -43,10 +106,8 @@ const brandon = await prisma.user.create({
     data: {
         name: 'brandon',
         email: 'brandon@gmail.com',
-        specialization: 'brandon-oncology',
-        position: 'brandon-specialist',
-        phone: '123-456-7890'
-        specializationid: 
+        phone: '123-456-7890',
+        specializationId: virologist.id
     }
     
 });
@@ -55,10 +116,8 @@ const dora = await prisma.user.create({
     data: {
         name: 'dora',
         email: 'dora@gmail.com',
-        specialization: 'dora-oncology',
-        position: 'dora-specialist',
-        phone: '123-456-7890'
-        specializationid: 
+        phone: '123-456-7890',
+        specializationId: nutritionist.id
     }
     
 });
@@ -67,10 +126,8 @@ const sean = await prisma.user.create({
     data: {
         name: 'sean',
         email: 'sean@gmail.com',
-        specialization: 'sean-oncology',
-        position: 'sean-specialist',
-        phone: '123-456-7890'
-        specializationid: 
+        phone: '123-456-7890',
+        specializationId: surgeon.id
     }
     
 });
@@ -79,23 +136,52 @@ const matt = await prisma.user.create({
     data: {
         name: 'matt',
         email: 'matt@gmail.com',
-        specialization: 'matt-oncology',
-        position: 'matt-specialist',
-        phone: '123-456-7890'
-        specializationid: 
+        phone: '123-456-7890',
+        specializationId: epidemiologist.id
     }
     
 });
+
+
+const dog = await prisma.pet.create({
+    data: {
+        name: 'Dog',
+    }
+})
+const cat = await prisma.pet.create({
+    data: {
+        name: 'Cat',
+    }
+})
+const bird = await prisma.pet.create({
+    data: {
+        name: 'Bird',
+    }
+})
+const rabbit = await prisma.pet.create({
+    data: {
+        name: 'Rabbit',
+    }
+})
+const exotic = await prisma.pet.create({
+    data: {
+        name: 'Exotic',
+    }
+})
 
 
 const post1 = await prisma.post.create({
     data: {
         description: 'post1',
         title: 'title1',
-        user: person,
-        userId: person.id,
+        userId: mikey.id,
         rating: 5,
-        resolved: false
+        resolved: false,
+        area: "Unknown",
+        petId: dog.id,
+        urgency: true
+
+
     }
     
 });
@@ -104,10 +190,12 @@ const post2 = await prisma.post.create({
     data: {
         description: 'post2',
         title: 'title2',
-        user: person,
-        userId: person.id,
+        userId: sean.id,
         rating: 5,
-        resolved: false
+        resolved: false,
+        area: "Heart",
+        petId: cat.id,
+        urgency: false
     }
     
 });
@@ -116,10 +204,12 @@ const post3 = await prisma.post.create({
     data: {
         description: 'post3',
         title: 'title3',
-        user: person,
-        userId: person.id,
+        userId: sean.id,
         rating: 5,
-        resolved: false
+        resolved: false,
+        area: "Teeth",
+        petId: exotic.id,
+        urgency: false
     }
 });
 
@@ -128,12 +218,13 @@ const post4 = await prisma.post.create({
     data: {
         description: 'post4',
         title: 'title4',
-        user: person,
-        userId: person.id,
-        rating: 5,
-        resolved: false
-    }
-    
+        userId: jason.id,
+        rating: 4,
+        resolved: false,
+        area: "Beak",
+        petId: bird.id,
+        urgency: true
+    } 
 });
 
 
@@ -141,10 +232,12 @@ const post5 = await prisma.post.create({
     data: {
         description: 'post5',
         title: 'title5',
-        user: person,
-        userId: person.id,
+        userId: justin.id,
         rating: 5,
-        resolved: false
+        resolved: true,
+        area: "Foot",
+        petId: rabbit.id,
+        urgency: false
     }
     
 });
@@ -154,166 +247,16 @@ const post6 = await prisma.post.create({
     data: {
         description: 'post6',
         title: 'title6',
-        user: person,
-        userId: person.id,
+        userId: dora.id,
         rating: 5,
-        resolved: false
+        resolved: false,
+        area: "Lung",
+        petId: dog.id,
+        urgency: true
     }
     
 });
-
-
-const post7 = await prisma.post.create({
-    data: {
-        description: 'post7',
-        title: 'title7',
-        user: person,
-        userId: person.id,
-        rating: 5,
-        resolved: false
-    }
-    
-});
-
-const cardiologist = await prisma.specialization.create({
-    data: {
-        name: 'cardiologist',
-        users: mikey,
-        color: 'red'
-    }
-})
-const neurologist = await prisma.specialization.create({
-    data: {
-        name: 'neurologist',
-        users: jason,
-        color: 'blue'
-    }
-})
-const oncologist = await prisma.specialization.create({
-    data: {
-        name: 'oncologist',
-        users: sean,
-        color: 'orange'
-    }
-})
-const nutritionist = await prisma.specialization.create({
-    data: {
-        name: 'nutritionist',
-        users: dora,
-        color: 'purple'
-    }
-})
-const virologist = await prisma.specialization.create({
-    data: {
-        name: 'virologist',
-        users: brandon,
-        color: 'green'
-    }
-})
-const immunologist = await prisma.specialization.create({
-    data: {
-        name: 'immunologist',
-        users: justin,
-        color: 'cyan'
-    }
-})
-const parasitologist = await prisma.specialization.create({
-    data: {
-        name: 'parasitologist',
-        users: matt,
-        color: 'yellow'
-    }
-})
-const epidemiologist = await prisma.specialization.create({
-    data: {
-        name: 'epidemiologist',
-        users: mikey,
-        color: 'lime'
-    }
-})
-const surgeon = await prisma.specialization.create({
-    data: {
-        name: 'surgeon',
-        users: jason,
-        color: 'amber'
-    }
-})
-const dentist = await prisma.specialization.create({
-    data: {
-        name: 'dentist',
-        users: justin,
-        color: 'fuchia'
-    }
-})
-
-const dog = await prisma.pet.create({
-    data: {
-        name: 'dog',
-        posts: post1
-        emoji: U+1F415
-    }
-})
-const cat = await prisma.pet.create({
-    data: {
-        name: 'cat',
-        posts: post2
-        emoji:
-    }
-})
-const snake = await prisma.pet.create({
-    data: {
-        name: 'snake',
-        posts: post3
-        emoji:
-    }
-})
-const rabbit = await prisma.pet.create({
-    data: {
-        name: 'rabbit',
-        posts: post4
-        emoji:
-    }
-})
-const hamster = await prisma.pet.create({
-    data: {
-        name: 'hamster',
-        posts: post5
-        emoji:
-    }
-})
-const bird = await prisma.pet.create({
-    data: {
-        name: 'bird',
-        posts: post6
-        emoji:
-    }
-})
-const lizard = await prisma.pet.create({
-    data: {
-        name: 'lizard',
-        posts: 
-        emoji:
-    }
-})
-const pig = await prisma.pet.create({
-    data: {
-        name: 'pig',
-        posts: 
-        emoji: '🐷'
-    }
-})
-const turtles = await prisma.pet.create({
-    data: {
-        name: 'turtles',
-        posts: 
-        emoji:
-    }
-})
 
 
 console.log('sup bitch');
-
-
-
-
 
