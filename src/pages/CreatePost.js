@@ -1,10 +1,9 @@
 import Nav from '../pages/components/Nav'
-import React from "react";
-import { useState } from 'react';
-import { TextField } from '@mui/material';
+import { use, useState } from 'react';
+import { FormControlLabel, TextField } from '@mui/material';
 import { Select, MenuItem } from '@mui/material';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import {Checkbox} from '@mui/material';
+import FormLabel from '@mui/material/FormLabel';
 
 
 

@@ -181,9 +181,9 @@ const post1 = await prisma.post.create({
         userId: mikey.id,
         rating: 5,
         resolved: false,
-        area: "Unknown",
         petId: dog.id,
-        urgency: true
+        urgency: true,
+        image: '/assets/dog1.jpg'
 
 
     }
@@ -199,7 +199,8 @@ const post2 = await prisma.post.create({
         resolved: false,
         area: "Heart",
         petId: cat.id,
-        urgency: false
+        urgency: false,
+        image: '/assets/cat1.jpg'
     }
     
 });
@@ -213,7 +214,8 @@ const post3 = await prisma.post.create({
         resolved: false,
         area: "Teeth",
         petId: exotic.id,
-        urgency: false
+        urgency: false,
+        image: '/assets/chinchilla1.webp'
     }
 });
 
@@ -227,7 +229,8 @@ const post4 = await prisma.post.create({
         resolved: false,
         area: "Beak",
         petId: bird.id,
-        urgency: true
+        urgency: true,
+        image: '/assets/bird_beak.jpg'
     } 
 });
 
@@ -241,7 +244,8 @@ const post5 = await prisma.post.create({
         resolved: true,
         area: "Foot",
         petId: rabbit.id,
-        urgency: false
+        urgency: false,
+        image: '/assets/rabbit1.jpg'
     }
     
 });
@@ -256,7 +260,8 @@ const post6 = await prisma.post.create({
         resolved: false,
         area: "Lung",
         petId: dog.id,
-        urgency: true
+        urgency: true,
+        image: '/assets/dog2.jpg'
     }
     
 });

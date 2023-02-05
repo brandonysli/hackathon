@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import NextImage from 'next/image'
 import { IconBookmark } from '@tabler/icons-react';
 
-import img from '../../../assets/img/dog1.jpg';
-import Tag from './Tag';
 
+
+import Tag from './Tag';
 
 export default function Post({postProps}) {
 
@@ -25,12 +25,12 @@ export default function Post({postProps}) {
 
     return ( 
 
-        <div className="flex flex-col gap-2 justify-center items-center my-8">
+        <div className="flex flex-col gap-2 justify-center items-center my-4">
 
             {data?.data.map((val, index) => {
                 return (
                     <div className="flex flex-row justify-center w-1/2 gap-2 p-4 font-OpenSans hover:bg-gray-100 rounded-2xl">
-                    <NextImage src={img} width={300} height = {300} className="shadow-lg rounded-2xl"></NextImage>
+                    <NextImage src={ val.image } width="300" height = "300" className="shadow-lg rounded-2xl w-full"></NextImage>
                     <div className="flex flex-col w-full gap-2 p-2">
                         <div className="flex flex-row justify-between gap-8">
                             <div className="flex flex-col gap-2">

@@ -1,4 +1,4 @@
-import Logo from '../../../assets/img/vetlink.svg';
+//import Logo from '../../../assets/img/vetlink.svg';
 import NextImg from 'next/image'
 import { IconPlus } from '@tabler/icons-react';
 import { IconMessages } from '@tabler/icons-react';
@@ -24,7 +24,7 @@ export default function Nav(){
         <>
             <div className="flex flex-row justify-between px-12 py-4">
                 <a className="flex flex-row justify-center items-center">
-                    <NextImg src={Logo}  width={125} height={125}/>    
+                    <NextImg src='/assets/vetlink.svg'  width={125} height={125}/>    
                 </a>
                 <div className="flex flex-row items-center justify-center gap-6 mt-2">
                     
