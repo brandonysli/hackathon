@@ -1,7 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
-
 await prisma.user.deleteMany();
 await prisma.pet.deleteMany();
 await prisma.post.deleteMany();
@@ -9,254 +8,253 @@ await prisma.specialization.deleteMany();
 
 
 const cardiologist = await prisma.specialization.create({
-    data: {
-        name: 'cardiologist',
-        color: 'red'
-    }
+    data: {
+        name: 'cardiologist',
+        color: 'red'
+    }
 })
 const neurologist = await prisma.specialization.create({
-    data: {
-        name: 'neurologist',
-        color: 'blue'
-    }
+    data: {
+        name: 'neurologist',
+        color: 'blue'
+    }
 })
 const oncologist = await prisma.specialization.create({
-    data: {
-        name: 'oncologist',
-        color: 'orange'
-    }
+    data: {
+        name: 'oncologist',
+        color: 'orange'
+    }
 })
 const nutritionist = await prisma.specialization.create({
-    data: {
-        name: 'nutritionist',
-        color: 'purple'
-    }
+    data: {
+        name: 'nutritionist',
+        color: 'purple'
+    }
 })
 const virologist = await prisma.specialization.create({
-    data: {
-        name: 'virologist',
-        color: 'green'
-    }
+    data: {
+        name: 'virologist',
+        color: 'green'
+    }
 })
 const immunologist = await prisma.specialization.create({
-    data: {
-        name: 'immunologist',
-        color: 'cyan'
-    }
+    data: {
+        name: 'immunologist',
+        color: 'cyan'
+    }
 })
 const parasitologist = await prisma.specialization.create({
-    data: {
-        name: 'parasitologist',
-        color: 'yellow'
-    }
+    data: {
+        name: 'parasitologist',
+        color: 'yellow'
+    }
 })
 const epidemiologist = await prisma.specialization.create({
-    data: {
-        name: 'epidemiologist',
-        color: 'lime'
-    }
+    data: {
+        name: 'epidemiologist',
+        color: 'lime'
+    }
 })
 const surgeon = await prisma.specialization.create({
-    data: {
-        name: 'surgeon',
-        color: 'amber'
-    }
+    data: {
+        name: 'surgeon',
+        color: 'amber'
+    }
 })
 const dentist = await prisma.specialization.create({
-    data: {
-        name: 'dentist',
-        color: 'fuchia'
-    }
+    data: {
+        name: 'dentist',
+        color: 'fuchia'
+    }
 })
 
 
 
 const mikey = await prisma.user.create({
-    data: {
-        name: 'mikey',
-        email: 'mikey@gmail.com',
-        phone: '123-456-7890',
-        specializationId: dentist.id 
-        
-    }
-    
+    data: {
+        name: 'mikey',
+        email: 'mikey@gmail.com',
+        phone: '123-456-7890',
+        specializationId: dentist.id 
+        
+    }
+    
 });
 
 const jason = await prisma.user.create({
-    data: {
-        name: 'jason',
-        email: 'jason@gmail.com',
-        phone: '123-456-7890',
-        specializationId: neurologist.id
-    }
+    data: {
+        name: 'jason',
+        email: 'jason@gmail.com',
+        phone: '123-456-7890',
+        specializationId: neurologist.id
+    }
 });
 
 const justin = await prisma.user.create({
-    data: {
-        name: 'justin',
-        email: 'justin@gmail.com',
-        phone: '123-456-7890',
-        specializationId: oncologist.id
-    }
-    
-    
+    data: {
+        name: 'justin',
+        email: 'justin@gmail.com',
+        phone: '123-456-7890',
+        specializationId: oncologist.id
+    }
+    
+    
 });
 
 const brandon = await prisma.user.create({
-    data: {
-        name: 'brandon',
-        email: 'brandon@gmail.com',
-        phone: '123-456-7890',
-        specializationId: virologist.id
-    }
-    
+    data: {
+        name: 'brandon',
+        email: 'brandon@gmail.com',
+        phone: '123-456-7890',
+        specializationId: virologist.id
+    }
+    
 });
 
 const dora = await prisma.user.create({
-    data: {
-        name: 'dora',
-        email: 'dora@gmail.com',
-        phone: '123-456-7890',
-        specializationId: nutritionist.id
-    }
-    
+    data: {
+        name: 'dora',
+        email: 'dora@gmail.com',
+        phone: '123-456-7890',
+        specializationId: nutritionist.id
+    }
+    
 });
 
 const sean = await prisma.user.create({
-    data: {
-        name: 'sean',
-        email: 'sean@gmail.com',
-        phone: '123-456-7890',
-        specializationId: surgeon.id
-    }
-    
+    data: {
+        name: 'sean',
+        email: 'sean@gmail.com',
+        phone: '123-456-7890',
+        specializationId: surgeon.id
+    }
+    
 });
 
 const matt = await prisma.user.create({
-    data: {
-        name: 'matt',
-        email: 'matt@gmail.com',
-        phone: '123-456-7890',
-        specializationId: epidemiologist.id
-    }
-    
+    data: {
+        name: 'matt',
+        email: 'matt@gmail.com',
+        phone: '123-456-7890',
+        specializationId: epidemiologist.id
+    }
+    
 });
 
 
 const dog = await prisma.pet.create({
-    data: {
-        name: 'Dog',
-    }
+    data: {
+        name: 'Dog',
+    }
 })
 const cat = await prisma.pet.create({
-    data: {
-        name: 'Cat',
-    }
+    data: {
+        name: 'Cat',
+    }
 })
 const bird = await prisma.pet.create({
-    data: {
-        name: 'Bird',
-    }
+    data: {
+        name: 'Bird',
+    }
 })
 const rabbit = await prisma.pet.create({
-    data: {
-        name: 'Rabbit',
-    }
+    data: {
+        name: 'Rabbit',
+    }
 })
 const exotic = await prisma.pet.create({
-    data: {
-        name: 'Exotic',
-    }
+    data: {
+        name: 'Exotic',
+    }
 })
 
 
 const post1 = await prisma.post.create({
-    data: {
-        description: 'post1',
-        title: 'title1',
-        userId: mikey.id,
-        rating: 5,
-        resolved: false,
-        area: "Unknown",
-        petId: dog.id,
-        urgency: true
+    data: {
+        description: 'Desperate for answers. My pet has been showing symptoms such as weight loss, decreased appetite, and lethargy, and I suspect they may have a underlying health condition. I am seeking advice and support from those who have gone through similar experiences. If you have any tips or recommendations, I would be so grateful. Thank you for your time and help.',
+        title: 'Does my dog need professional help?',
+        userId: mikey.id,
+        rating: 5,
+        resolved: false,
+        area: "Unknown",
+        petId: dog.id,
+        urgency: true
 
 
-    }
-    
+    }
+    
 });
 
 const post2 = await prisma.post.create({
-    data: {
-        description: 'post2',
-        title: 'title2',
-        userId: sean.id,
-        rating: 5,
-        resolved: false,
-        area: "Heart",
-        petId: cat.id,
-        urgency: false
-    }
-    
+    data: {
+        description: 'In need of guidance. My dear pet has been exhibiting symptoms such as coughing, shortness of breath, and fatigue. I am at a loss on how to best care for them. Has anyone else faced a similar situation? Any advice or recommendations would be greatly appreciated. Thank you for your time and help.',
+        title: 'Does my cat have a heart condition?',
+        userId: sean.id,
+        rating: 5,
+        resolved: false,
+        area: "Heart",
+        petId: cat.id,
+        urgency: false
+    }
+    
 });
 
 const post3 = await prisma.post.create({
-    data: {
-        description: 'post3',
-        title: 'title3',
-        userId: sean.id,
-        rating: 5,
-        resolved: false,
-        area: "Teeth",
-        petId: exotic.id,
-        urgency: false
-    }
+    data: {
+        description: 'Seeking advice and support. My pet is experiencing symptoms such as bad breath, discomfort while eating, and excessive drooling. I am hoping to find advice from others who may have gone through similar experiences. Any suggestions or tips would be greatly appreciated. Thanks.',
+        title: 'Something is wrong with my chinchilla teeth',
+        userId: sean.id,
+        rating: 5,
+        resolved: false,
+        area: "Teeth",
+        petId: exotic.id,
+        urgency: false
+    }
 });
 
 
 const post4 = await prisma.post.create({
-    data: {
-        description: 'post4',
-        title: 'title4',
-        userId: jason.id,
-        rating: 4,
-        resolved: false,
-        area: "Beak",
-        petId: bird.id,
-        urgency: true
-    } 
+    data: {
+        description: 'Urgent help needed. My pet bird is exhibiting symptoms such as difficulty eating, pain while preening, and a change in the shape of their beak. I am seeking advice from others who may have dealt with similar situations. Any suggestions or tips to help my feathered friend recover would be greatly appreciated. Thank you for your support.',
+        title: 'Is my bird gonna die',
+        userId: jason.id,
+        rating: 4,
+        resolved: false,
+        area: "Beak",
+        petId: bird.id,
+        urgency: true
+    } 
 });
 
 
 const post5 = await prisma.post.create({
-    data: {
-        description: 'post5',
-        title: 'title5',
-        userId: justin.id,
-        rating: 5,
-        resolved: true,
-        area: "Foot",
-        petId: rabbit.id,
-        urgency: false
-    }
-    
+    data: {
+        description: 'SOS! My pet is in need of support. They are experiencing symptoms such as limping, swelling, and pain. I am looking for advice from others who have faced similar challenges. Please, if you have any tips or recommendations, let me know. I am grateful for any help during this difficult time. Thank you.',
+        title: 'my rabbit has a foot problem',
+        userId: justin.id,
+        rating: 5,
+        resolved: true,
+        area: "Foot",
+        petId: rabbit.id,
+        urgency: false
+    }
+    
 });
 
 
 const post6 = await prisma.post.create({
-    data: {
-        description: 'post6',
-        title: 'title6',
-        userId: dora.id,
-        rating: 5,
-        resolved: false,
-        area: "Lung",
-        petId: dog.id,
-        urgency: true
-    }
-    
+    data: {
+        description: 'Help needed! My pet is exhibiting symptoms such as coughing, wheezing, and shortness of breath, and I suspect they may have a lung condition. I am searching for advice and support on how best to proceed with a diagnosis and treatment. If you have any experiences or insights to share, I would be so grateful. Thank you for your time and help.',
+        title: 'Help! My dog is exhibiting scary symptoms',
+        userId: dora.id,
+        rating: 5,
+        resolved: false,
+        area: "Lung",
+        petId: dog.id,
+        urgency: true
+    }
+    
 });
 
 
 console.log('sup bitch');
-
