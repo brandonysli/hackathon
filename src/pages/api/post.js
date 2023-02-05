@@ -11,7 +11,11 @@ export default async function handler(req, res) {
       const posts = await prisma.post.findMany({
         include: {
             pet: true,
-            users: true
+            reviewingUser: {
+              include: {
+                specialization: true
+              }
+            }
         }
       });
       res.status(200).json({data: posts});

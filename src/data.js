@@ -9,62 +9,62 @@ await prisma.specialization.deleteMany();
 
 const cardiologist = await prisma.specialization.create({
     data: {
-        name: 'cardiologist',
+        name: 'Cardiologist',
         color: 'red'
     }
 })
 const neurologist = await prisma.specialization.create({
     data: {
-        name: 'neurologist',
+        name: 'Neurologist',
         color: 'blue'
     }
 })
 const oncologist = await prisma.specialization.create({
     data: {
-        name: 'oncologist',
+        name: 'Oncologist',
         color: 'orange'
     }
 })
 const nutritionist = await prisma.specialization.create({
     data: {
-        name: 'nutritionist',
+        name: 'Nutritionist',
         color: 'purple'
     }
 })
 const virologist = await prisma.specialization.create({
     data: {
-        name: 'virologist',
+        name: 'Virologist',
         color: 'green'
     }
 })
 const immunologist = await prisma.specialization.create({
     data: {
-        name: 'immunologist',
+        name: 'Immunologist',
         color: 'cyan'
     }
 })
 const parasitologist = await prisma.specialization.create({
     data: {
-        name: 'parasitologist',
+        name: 'Parasitologist',
         color: 'yellow'
     }
 })
 const epidemiologist = await prisma.specialization.create({
     data: {
-        name: 'epidemiologist',
+        name: 'Epidemiologist',
         color: 'lime'
     }
 })
 const surgeon = await prisma.specialization.create({
     data: {
-        name: 'surgeon',
+        name: 'Surgeon',
         color: 'amber'
     }
 })
 const dentist = await prisma.specialization.create({
     data: {
-        name: 'dentist',
-        color: 'fuchia'
+        name: 'Dentist',
+        color: 'fuchsia'
     }
 })
 
@@ -72,7 +72,7 @@ const dentist = await prisma.specialization.create({
 
 const mikey = await prisma.user.create({
     data: {
-        name: 'mikey',
+        name: 'Mikey',
         email: 'mikey@gmail.com',
         phone: '123-456-7890',
         specializationId: dentist.id 
@@ -83,7 +83,7 @@ const mikey = await prisma.user.create({
 
 const jason = await prisma.user.create({
     data: {
-        name: 'jason',
+        name: 'Jason',
         email: 'jason@gmail.com',
         phone: '123-456-7890',
         specializationId: neurologist.id
@@ -92,7 +92,7 @@ const jason = await prisma.user.create({
 
 const justin = await prisma.user.create({
     data: {
-        name: 'justin',
+        name: 'Justin',
         email: 'justin@gmail.com',
         phone: '123-456-7890',
         specializationId: oncologist.id
@@ -103,7 +103,7 @@ const justin = await prisma.user.create({
 
 const brandon = await prisma.user.create({
     data: {
-        name: 'brandon',
+        name: 'Brandon',
         email: 'brandon@gmail.com',
         phone: '123-456-7890',
         specializationId: virologist.id
@@ -113,7 +113,7 @@ const brandon = await prisma.user.create({
 
 const dora = await prisma.user.create({
     data: {
-        name: 'dora',
+        name: 'Dora',
         email: 'dora@gmail.com',
         phone: '123-456-7890',
         specializationId: nutritionist.id
@@ -123,7 +123,7 @@ const dora = await prisma.user.create({
 
 const sean = await prisma.user.create({
     data: {
-        name: 'sean',
+        name: 'Sean',
         email: 'sean@gmail.com',
         phone: '123-456-7890',
         specializationId: surgeon.id
@@ -133,7 +133,7 @@ const sean = await prisma.user.create({
 
 const matt = await prisma.user.create({
     data: {
-        name: 'matt',
+        name: 'Matt',
         email: 'matt@gmail.com',
         phone: '123-456-7890',
         specializationId: epidemiologist.id
@@ -145,26 +145,31 @@ const matt = await prisma.user.create({
 const dog = await prisma.pet.create({
     data: {
         name: 'Dog',
+        color: 'blue'
     }
 })
 const cat = await prisma.pet.create({
     data: {
         name: 'Cat',
+        color: 'amber'
     }
 })
 const bird = await prisma.pet.create({
     data: {
         name: 'Bird',
+        color: 'green'   
     }
 })
 const rabbit = await prisma.pet.create({
     data: {
         name: 'Rabbit',
+        color: 'red'
     }
 })
 const exotic = await prisma.pet.create({
     data: {
         name: 'Exotic',
+        color: 'violet'
     }
 })
 
