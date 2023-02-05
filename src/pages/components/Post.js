@@ -66,7 +66,7 @@ export default function Post({postProps}) {
                             <IconBookmark/>
                         </div>
                         <div className="px-2 py-1 bg-gray-100 rounded-lg">
-                            <p className="font-bold">$30 Flat Fee</p>
+                            <p className="font-bold">{`$${val.urgency ? 45 : 25} Flat Fee`}</p>
                         </div>
                     </div>
                 </div>
