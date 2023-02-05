@@ -2,14 +2,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-
+import { MantineProvider } from '@mantine/core';
 import Post from './components/Post'
-import Tag from './components/Tag'
 import Nav from './components/Nav'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  
   return (
     <>
       <Head>
@@ -18,16 +18,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"></link>
       </Head>
-      <Nav />
-      <Post />
-      <Tag tagname="Orthodontist"/>
+      <MantineProvider withGlobalStyles withNormalizeCSS>
+        <Nav />
+        <Post />
+        
+      </MantineProvider>
     </>
   )
-
-  
 }
 
 
