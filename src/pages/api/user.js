@@ -2,11 +2,11 @@
 
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method == 'GET') {
     try {
       const data = JSON.stringify(req);
-      const posts = prisma.user.findMany({
+      const posts = await prisma.user.findMany({
         where: {
           userId: data.id
         }
@@ -14,7 +14,7 @@ export default function handler(req, res) {
       res.status(200).json(posts);
     } catch {
       res.status(500).json({
-        message: error
+        message: "error"
       });
     }
   } else if (req.method == 'POST') {
@@ -31,7 +31,7 @@ export default function handler(req, res) {
       res.status(200).json(post);
     } catch {
       res.status(500).json({
-        message: error
+        message: "error"
       });
     }
   }
